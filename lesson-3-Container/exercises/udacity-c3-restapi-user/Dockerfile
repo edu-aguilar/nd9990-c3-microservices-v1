@@ -8,7 +8,8 @@ COPY package*.json ./
 RUN npm ci 
 # Copy the rest of the code
 COPY . .
+RUN npm run build-clean
 # Expose the port 
 EXPOSE 8080
 # Define the command that should be executed
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "prod" ]
